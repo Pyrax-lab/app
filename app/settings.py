@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'debug_toolbar', #Устнавливаем django_debug_toolbar cторонию библиотеку для sql
     "main",
     "goods",
 ]
@@ -50,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    "debug_toolbar.middleware.DebugToolbarMiddleware", # Подключаем еще сюда бибилиотеку django_tool_bar    
 ]
 
 ROOT_URLCONF = 'app.urls'
@@ -122,6 +125,10 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [  # Создаём путь для всех css методом и не только
     BASE_DIR / "static"
+]
+
+INTERNAL_IPS = [
+    "127.0.0.1"  
 ]
 
 # Default primary key field type

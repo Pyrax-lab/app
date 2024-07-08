@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from app.settings import DEBUG
+
 #from main import views   
 
 urlpatterns = [
@@ -24,3 +26,7 @@ urlpatterns = [
     path("", include('main.urls' , namespace = 'main')),
     path("catalog/", include("goods.urls", namespace = 'goods'))
 ]
+
+
+if DEBUG:   # Если вулючён отладочный режим тогда подключаем либу 
+    urlpatterns += [path("__debug__/", include("debug_toolbar.urls")),] # добавляем путь включающий нашу библиотеку 
