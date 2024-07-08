@@ -1,0 +1,170 @@
+[
+    {
+        "model": "goods.product",
+        "pk": 1,
+        "fields": {
+            "name": "������ ������ � ��� �����",
+            "slug": "chajnyj-stolik-i-tri-stula",
+            "descriptions": "�������� �� ��� ������� � ������������ ������ ��� ��������� �������.",
+            "image": "",
+            "price": "150.00",
+            "sale": "0.00",
+            "count": 5,
+            "category": 9
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 2,
+        "fields": {
+            "name": "������ ������ � ��� �����",
+            "slug": "chajnyj-stolik-i-dva-stula",
+            "descriptions": "����� �� ����� � ���� ������� � ����������������� �����",
+            "image": "",
+            "price": "93.00",
+            "sale": "0.00",
+            "count": 9,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 3,
+        "fields": {
+            "name": "������������ �������",
+            "slug": "dvuhspalnaya-krovat",
+            "descriptions": "������� ������������ � ������������� � ������ ����� ������������.",
+            "image": "",
+            "price": "670.00",
+            "sale": "0.00",
+            "count": 33,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 4,
+        "fields": {
+            "name": "�������� ���� � ���������",
+            "slug": "kuhonnyj-stol-s-rakovinoj",
+            "descriptions": "�������� ���� ��� ����� � ���������� ��������� � ��������.",
+            "image": "",
+            "price": "365.00",
+            "sale": "0.00",
+            "count": 6,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 5,
+        "fields": {
+            "name": "�������� ���� � ���������",
+            "slug": "kuhonnyj-stol-s-vstrojkoj",
+            "descriptions": "�������� ���� �� ���������� ������ � ���������. ����� ����� � ������ ��������.",
+            "image": "",
+            "price": "321.00",
+            "sale": "0.00",
+            "count": 4,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 6,
+        "fields": {
+            "name": "������� ����� ��� ���������",
+            "slug": "uglovoj-divan-dlya-gostinnoj",
+            "descriptions": "������� �����, �������������� � ������������ �������, ��� ��������� � ������ ������ ����� ��!",
+            "image": "",
+            "price": "613.00",
+            "sale": "0.00",
+            "count": 6,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 7,
+        "fields": {
+            "name": "������������ ������",
+            "slug": "prikrovatnyj-stolik",
+            "descriptions": "������������ ������ � ����� ���������� ������� (������ �� ������ � ��������).",
+            "image": "",
+            "price": "978.00",
+            "sale": "0.00",
+            "count": 7,
+            "category": 10
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 8,
+        "fields": {
+            "name": "����� ������������",
+            "slug": "divan-obyknovennyj",
+            "descriptions": "�����, �� �� ���� ������������, ������ ��������������� ��� ��������.",
+            "image": "",
+            "price": "420.00",
+            "sale": "0.00",
+            "count": 7,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 9,
+        "fields": {
+            "name": "���� �������",
+            "slug": "stul-ofisnyj",
+            "descriptions": "�������� ������, ��� �� ����� �� ��������, �� ��� ����, ��� ��� �������...",
+            "image": "",
+            "price": "241.00",
+            "sale": "0.00",
+            "count": 5,
+            "category": 11
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 10,
+        "fields": {
+            "name": "rastenie",
+            "slug": "rastenie",
+            "descriptions": "rastenie.",
+            "image": "",
+            "price": "10.00",
+            "sale": "0.00",
+            "count": 13,
+            "category": 12
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 11,
+        "fields": {
+            "name": "cvetok-stilizirovannyj",
+            "slug": "cvetok-stilizirovannyj",
+            "descriptions": "cvetok-stilizirovannyj",
+            "image": "",
+            "price": "15.00",
+            "sale": "0.00",
+            "count": 12,
+            "category": 12
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 12,
+        "fields": {
+            "name": "prikrovatnyj-stolik-domashnij",
+            "slug": "prikrovatnyj-stolik-domashnij",
+            "descriptions": "prikrovatnyj-stolik-domashnij.",
+            "image": "",
+            "price": "252.00",
+            "sale": "0.00",
+            "count": 23,
+            "category": 8
+        }
+    }
+]

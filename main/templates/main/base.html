@@ -60,7 +60,7 @@
                                 <li><a class="dropdown-item  text-white" href="{% static "carts/cart.html" %}">Корзина</a></li>
                                 <li><a class="dropdown-item  text-white" href="{% static "users/profile.html" %}">Личный кабинет</a>
                                 </li>
-                                <li><a class="dropdown-item  text-white" href="#">Админ панель</a></li>
+                                <li><a class="dropdown-item  text-white" href="{% url "admin:index" %}">Админ панель</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -88,15 +88,16 @@
                         <img class="mx-1" src="{% static "deps/icons/grid-fill.svg" %}" alt="Catalog Icon" width="16"
                             height="16">
                     </button>
+                    
+                    
                     <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
-                        <li><a class="dropdown-item text-white" href="{% url "goods:index_catalog" %}">Все товары</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "goods:index_catalog" %}">Кухня</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "goods:index_catalog" %}">Спальня</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "goods:index_catalog" %}">Гостинная</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "goods:index_catalog" %}">Офис</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "goods:index_catalog" %}">Фурнитура</a></li>
-                        <li><a class="dropdown-item text-white" href="{% url "goods:index_catalog" %}">Декор</a></li>
+                        {% for cat in category %}
+                        <li><a class="dropdown-item text-white" href="{% url "goods:index_catalog" %}">{{cat.name}}</a></li>
+                        {% endfor %}
+                        
                     </ul>
+                    
+                    
                 </div>
                 <!-- Значек корзины, вызывает модальное окно -->
                 <div>
