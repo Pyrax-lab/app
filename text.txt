@@ -93,3 +93,44 @@ while True:
 
 conn.close()
 server_socket.close()
+
+
+
+
+-------
+
+
+import os
+import shutil
+import sys
+import winreg
+
+def add_to_autostart():
+    script_path = sys.argv[0]  # Путь к самому скрипту
+
+    # Создание ярлыка в папке автозагрузки
+    startup_folder = os.path.join(os.getenv('APPDATA'), 'Microsoft\\Windows\\Start Menu\\Programs\\Startup')
+    shortcut_path = os.path.join(startup_folder, 'server.lnk')
+
+    if not os.path.exists(shortcut_path):
+        # Создание ярлыка через Windows API
+        import pythoncom
+        from win32com.client import Dispatch
+
+        shell = Dispatch('WScript.Shell')
+        shortcut = shell.CreateShortcut(shortcut_path)
+        shortcut.TargetPath = sys.executable  # Путь к интерпретатору Python
+        shortcut.Arguments = f'"{script_path}"'  # Путь к вашему скрипту
+        shortcut.WorkingDirectory = os.path.dirname(script_path)
+        shortcut.Save()
+        print(f"Ярлык создан: {shortcut_path}")
+    else:
+        print("Скрипт уже находится в автозагрузке.")
+
+if __name__ == "__main__":
+    add_to_autostart()
+    print("Скрипт добавлен в автозагрузку!")
+    # Основная логика вашего скрипта:
+    while True:
+        pass  # Ваш серверный код здесь
+
