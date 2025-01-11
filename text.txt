@@ -29,3 +29,67 @@ while True:
 
 conn.close()
 server_socket.close()
+
+
+
+
+
+----
+
+
+import socket
+import subprocess
+import os
+import pyautogui  # Для управления мышкой и клавиатурой
+
+# Настройки сервера
+HOST = '0.0.0.0'  # Слушать все адреса
+PORT = 8000       # Порт для подключения
+
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server_socket.bind((HOST, PORT))
+server_socket.listen(1)
+print(f"Сервер запущен. Ожидание подключения на порту {PORT}...")
+
+conn, addr = server_socket.accept()
+print(f"Подключение от: {addr}")
+
+while True:
+    try:
+        # Получение команды
+        command = conn.recv(1024).decode().strip()
+        if command.lower() == 'exit':
+            print("Закрытие соединения.")
+            break
+
+        if command.startswith("create_file"):
+            # Создать файл на рабочем столе
+            file_path = os.path.join(os.path.expanduser("~"), "Desktop", "example.txt")
+            with open(file_path, "w") as f:
+                f.write("Это тестовое содержимое.")
+            conn.send(f"Файл создан: {file_path}".encode())
+
+        elif command.startswith("open_calculator"):
+            # Открыть калькулятор
+            if os.name == "nt":  # Windows
+                subprocess.Popen("calc.exe")
+            elif os.name == "posix":  # Linux/Mac
+                subprocess.Popen(["gnome-calculator"])
+            conn.send("Калькулятор запущен.".encode())
+
+        elif command.startswith("move_mouse"):
+            # Переместить мышку
+            x, y = map(int, command.split()[1:3])  # Пример: move_mouse 100 200
+            pyautogui.moveTo(x, y)
+            conn.send(f"Мышка перемещена в координаты: {x}, {y}".encode())
+
+        else:
+            # Выполнение произвольной команды
+            output = subprocess.getoutput(command)
+            conn.send(output.encode())
+
+    except Exception as e:
+        conn.send(f"Ошибка: {e}".encode())
+
+conn.close()
+server_socket.close()
